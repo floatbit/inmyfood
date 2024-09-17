@@ -1,0 +1,41 @@
+.block-camera {
+    .video-container {
+        position: relative;
+        max-width: 1024;
+        width: 100%;
+    }
+    video, canvas {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    canvas {
+        max-width: 100%;
+    }
+    #capture-button, #submit-button, #retake-button, #switch-camera {
+        margin: 10px 10px 10px 0;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+    #capture-button {
+        @apply btn btn-primary;
+    }
+    #submit-button {
+        @apply btn btn-accent;
+        display: none;
+    }
+    #retake-button {
+        @apply btn;
+        display: none;
+    }
+    #zoom-slider {
+        @apply hidden;
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        right: 15px;
+        width: calc(100% - 30px);
+    }
+
+}
