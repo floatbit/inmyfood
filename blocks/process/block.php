@@ -83,7 +83,7 @@ if (isset($_POST['image'])) {
             "name": "Soy Sauce",
             "description": "A common condiment made from fermented soybeans, water, and salt.",
             "reason": "High sodium content which can contribute to high blood pressure.",
-            "is_neutral": 0,
+            "is_neutral": 1,
             "healthier_alternative": "Low-sodium soy sauce",
             "environmental_impact": "Low footprint",
             "nutritional_risks": ["sodium"]
@@ -96,7 +96,7 @@ if (isset($_POST['image'])) {
         "bioengineered": 0,
         "health_summary": ["neutral"],
         "nutritional_info": ["saturated fat", "sodium", "sugar"]
-      }. Avoid listing sub-ingredients. Use sub-ingredients to determine "reason," "allergens," and "allergies". Provide healthier alternatives, nutritional risks, and environmental impact. Set "is_neutral" to 0 if health risks exist, otherwise 1. Leave "made_in" blank if not shown. Leave "manufactured_facility_ingredients" blank unless facility info is provided. Set "bioengineered" to 1 if any ingredient is bioengineered, otherwise 0. Return JSON in one line with no formatting.';
+      }. Avoid listing sub-ingredients. Use sub-ingredients to determine "reason," "allergens," and "allergies". Provide healthier alternatives, nutritional risks, and environmental impact. Set "is_neutral" to 0 if any nutritional risks are present. Leave "made_in" blank if not shown. Leave "manufactured_facility_ingredients" blank unless facility info is provided. Set "bioengineered" to 1 if any ingredient is bioengineered, otherwise 0. Return JSON in one line with no formatting.';
   
       // Create the JSON payload
       $data = [
@@ -124,7 +124,7 @@ if (isset($_POST['image'])) {
       // API endpoint and API key
       $url = 'https://api.openai.com/v1/chat/completions';
       //$apiKey = 'sk-proj-PyPP64m7uitAKO3cyOajT3BlbkFJBEdSiayAEBJ9mvw39m5s';
-      $apiKey = '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';
+      $apiKey = 'sk-TUNvEqHvIB5kYW08l0WWMIssps1JvQzidq1RP-aAQaT3BlbkFJDAKUNuiR1l2qJPk7gT1G0rdW6QT1IVQvFk9kQca9gA';
   
       // Initialize cURL
       $ch = curl_init($url);
