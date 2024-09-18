@@ -2,7 +2,7 @@
     
 <div class="navbar">
   <div class="flex-1">
-    <a href="/" class="font-bold text-xl text-white">InMyFood</a>
+    <a href="/" class="font-bold text-xl text-white">inmy.food</a>
   </div>
   <div class="flex-none">
     <ul class="">
