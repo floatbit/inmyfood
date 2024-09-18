@@ -1,4 +1,4 @@
-<header class="container bg-neutral mb-10">
+<header class="container bg-neutral">
     
 <div class="navbar">
   <div class="flex-1">

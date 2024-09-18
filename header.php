@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> class="bg-base-200">
 
 <head>
     <meta charset="utf-8">
@@ -11,4 +11,5 @@
 <body <?php body_class('antialiased'); ?>>
 
     <?php get_template_part('parts/section-header'); ?>
+    
     <main>

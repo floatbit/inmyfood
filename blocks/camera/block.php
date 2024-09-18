@@ -27,25 +27,29 @@ if ( ! empty( $block['align'] ) ) {
 ?>
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
-    <div class="container">
-        
+	
     <div class="video-container">
-        <video id="video" autoplay playsinline></video>
-        <input type="range" id="zoom-slider" min="1" max="10" step="0.1" value="1">
-    </div>
-    <div class="mt-4">
-        <button id="capture-button">Take Photo</button>
-        <button id="switch-camera">Switch Camera</button>
-    </div>
-    <canvas id="canvas"></canvas>
-    <form id="image-form" method="POST" action="/process" enctype="multipart/form-data">
-        <input type="hidden" name="image" id="image-data">
-        <input type="hidden" name="date" id="current-date">
-        <input type="hidden" name="time" id="current-time">
-        <input type="hidden" name="day" id="current-day">
-        <button id="submit-button" type="submit">Submit</button>
-        <button id="retake-button" type="button">Retake</button>
-    </form>
+		<video id="video" autoplay playsinline></video>
+		<input type="range" id="zoom-slider" min="1" max="10" step="0.1" value="1">
+	</div>
 
-    </div>
+	<div class="mt-0">
+        <div class="container">
+            <button id="capture-button">Take Photo</button>
+            <button id="switch-camera">Switch Camera</button>
+        </div>
+	</div>
+
+	<canvas id="canvas"></canvas>
+
+	<div class="container">
+		<form id="image-form" method="POST" action="/process" enctype="multipart/form-data">
+			<input type="hidden" name="image" id="image-data">
+			<input type="hidden" name="date" id="current-date">
+			<input type="hidden" name="time" id="current-time">
+			<input type="hidden" name="day" id="current-day">
+			<button id="submit-button" type="submit">Submit</button>
+			<button id="retake-button" type="button">Retake</button>
+		</form>
+	</div>
 </div>
