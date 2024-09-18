@@ -48,6 +48,7 @@ module.exports = {
     './footer.php',
     './header.php',
     './index.php',
+    './single-shot.php',
     './parts/**/*.php',
     './blocks/**/*.php',
     './src/scss/**/*.scss',
@@ -73,7 +74,7 @@ module.exports = {
     require('daisyui'),  
   ],
   daisyui: {
-    themes: ["light", "dark", "cupcake"],
+    themes: ["cupcake", "dark", "cupcake"],
     darkTheme: "light"
   }
 }

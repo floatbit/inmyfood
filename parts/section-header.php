@@ -1,3 +1,5 @@
-<div class="container container-fluid">
-    <h2>section-header.php</h2>
-</div>
+<header class="container bg-neutral mb-10">
+    <div class="navbar">
+        <a href="/" class="font-bold text-xl text-white">InMyFood</a>
+    </div>
+</header>
