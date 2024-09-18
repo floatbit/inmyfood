@@ -52,11 +52,11 @@
                         <?php echo $ingredient['description']; ?>
                     </p>
                     <?php if ($ingredient['is_neutral'] == 0): ?>
-                        <p class="text-error">
+                        <p class="text-sm text-error">
                             <?php print $ingredient['reason']; ?>
                         </p>
                     <?php else: ?>
-                        <p class="text-success">
+                        <p class="text-smtext-success">
                             <?php print $ingredient['reason']; ?>
                         </p>
                     <?php endif; ?>
