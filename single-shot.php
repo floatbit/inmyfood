@@ -38,13 +38,13 @@
     <div class="bg-base-200 border-base-200 rounded-box p-5 mb-14">
 
         <?php foreach($json['ingredients'] as $ingredient): ?>
-            <div class="card card-compact bg-base-100 shadow-lg mb-8 pb-2">
+            <div class="card card-compact bg-base-100 shadow-lg mb-8 pb-2 relative">
                 <div class="card-body">
                     <h3 class="card-title mt-0 text-lg font-normal">
                         <?php if ($ingredient['is_neutral']): ?>
-                            <div class="badge badge-ghost badge-xs"></div>
+                            <div class="badge badge-ghost badge-xs absolute top-0 left-0 hidden"></div>
                         <?php else: ?>
-                            <div class="badge badge-error badge-xs"></div>
+                            <div class="badge badge-error badge-xs absolute top-[-5px] left-[-5px]"></div>
                         <?php endif; ?>
                         <?php echo $ingredient['name']; ?>
                     </h3>
