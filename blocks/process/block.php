@@ -123,8 +123,7 @@ if (isset($_POST['image'])) {
   
       // API endpoint and API key
       $url = 'https://api.openai.com/v1/chat/completions';
-      //$apiKey = 'sk-proj-PyPP64m7uitAKO3cyOajT3BlbkFJBEdSiayAEBJ9mvw39m5s';
-      $apiKey = 'sk-TUNvEqHvIB5kYW08l0WWMIssps1JvQzidq1RP-aAQaT3BlbkFJDAKUNuiR1l2qJPk7gT1G0rdW6QT1IVQvFk9kQca9gA';
+      $apiKey = CHATGPT_API_KEY;
   
       // Initialize cURL
       $ch = curl_init($url);
