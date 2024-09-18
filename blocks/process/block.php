@@ -123,7 +123,8 @@ if (isset($_POST['image'])) {
   
       // API endpoint and API key
       $url = 'https://api.openai.com/v1/chat/completions';
-      $apiKey = 'sk-proj-PyPP64m7uitAKO3cyOajT3BlbkFJBEdSiayAEBJ9mvw39m5s';
+      //$apiKey = 'sk-proj-PyPP64m7uitAKO3cyOajT3BlbkFJBEdSiayAEBJ9mvw39m5s';
+      $apiKey = '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';
   
       // Initialize cURL
       $ch = curl_init($url);
