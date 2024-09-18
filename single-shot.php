@@ -89,7 +89,7 @@
         
         <div class="divider opacity-60 my-8"></div>
 
-        <div class="container pb-10">
+        <div class="container">
             <h2 class="text-xl mb-3">Other Information</h2>
             <div class="ingredients-facility">
                 <?php if ($json['made_in']): ?>

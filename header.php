@@ -12,4 +12,4 @@
 
     <?php get_template_part('parts/section-header'); ?>
     
-    <main>
+    <main class="pb-10">
