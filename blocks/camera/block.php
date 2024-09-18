@@ -33,8 +33,10 @@ if ( ! empty( $block['align'] ) ) {
         <video id="video" autoplay playsinline></video>
         <input type="range" id="zoom-slider" min="1" max="10" step="0.1" value="1">
     </div>
-    <button id="capture-button">Take Photo</button>
-    <button id="switch-camera">Switch Camera</button>
+    <div class="mt-4">
+        <button id="capture-button">Take Photo</button>
+        <button id="switch-camera">Switch Camera</button>
+    </div>
     <canvas id="canvas"></canvas>
     <form id="image-form" method="POST" action="/process" enctype="multipart/form-data">
         <input type="hidden" name="image" id="image-data">

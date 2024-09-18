@@ -28,11 +28,11 @@ if ( ! empty( $block['align'] ) ) {
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="container">
-        <h2 class="pt-[100px] pb-[100px]">
-            TODO: blocks/landing
-        </h2>
-        <p>
-            <a href="/camera">Camera</a>
+        <h3 class="mb-10">
+            Snap a photo of a food’s ingredient list to uncover detailed information about each ingredient.
+        </h3>
+        <p class="text-left">
+            <a class="btn btn-primary btn-lg w-full text-2xl" href="/camera">Try It Now</a>
         </p>
     </div>
 </div>

@@ -14,19 +14,6 @@
 
 <div class="container">
 
-    <div class="stats stats-vertical lg:stats-horizontal shadow bg-base-200 w-full mb-14">
-        <div class="stat">
-            <div class="stat-title">Made In</div>
-            <div class="stat-value text-lg font-normal"><?php echo $json['made_in']; ?></div>
-        </div>
-
-        <div class="stat">
-            <div class="stat-title">Bioengineered</div>
-            <div class="stat-value text-lg font-normal">Yes</div>
-            <div class="stat-desc">1 or more ingredients</div>
-        </div>
-    </div>
-
     <?php if ($json['allergies']):?>
 
     <h2 class="text-xl mb-3">Allergy Information</h2>
@@ -47,7 +34,7 @@
     <?php endif; ?>
 
     <h2 class="text-xl mb-3">Ingredients</h2>
-    <p class="text-sm mb-5">Not comprehensive.</p>
+    <p class="text-sm mb-5">Note: This list may not include all ingredients. Please refer to the packaging for a complete list.</p>
     <div class="bg-base-200 border-base-200 rounded-box p-5 mb-14">
 
         <?php foreach($json['ingredients'] as $ingredient): ?>
@@ -97,10 +84,24 @@
 
 <?php endif; ?>
 
+<div class="stats stats-vertical lg:stats-horizontal shadow bg-base-200 w-full mb-14">
+        <div class="stat">
+            <div class="stat-title">Made In</div>
+            <div class="stat-value text-lg font-normal"><?php echo $json['made_in']; ?></div>
+        </div>
+
+        <?php if ($json['bioengineered']): ?>
+        <div class="stat">
+            <div class="stat-title">Bioengineered</div>
+            <div class="stat-value text-lg font-normal">Yes</div>
+            <div class="stat-desc">1 or more ingredients</div>
+        </div>
+        <?php endif; ?>
+    </div>
 
 
 
-    <?php pr($json); ?>
+<?php if (isset($_GET['c'])) pr($json); ?>
 
 </div>
 

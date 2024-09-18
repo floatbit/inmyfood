@@ -112,8 +112,7 @@ if (isset($_POST['image'])) {
                       [
                           "type" => "image_url",
                           "image_url" => [
-                              //"url" => wp_get_attachment_image_url($attachment_id, 'full')
-                              "url" => 'https://inmy.food/uploads/66e24027cefaa_resized.png'
+                              "url" => wp_get_attachment_image_url($attachment_id, 'full')
                           ]
                       ]
                   ]
