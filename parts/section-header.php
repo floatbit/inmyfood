@@ -1,4 +1,4 @@
-<header class="container bg-neutral">
+<header class="container container-fluid bg-neutral">
     
 <div class="navbar">
   <div class="flex-1">

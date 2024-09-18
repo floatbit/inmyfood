@@ -15,7 +15,7 @@
         <div class="container">
             <h2 class="text-xl mb-3">Allergy Information</h2>
             <p class="text-sm mb-5">Be aware of potential allergens found in this product.</p>
-            <div class="card card-compact bg-base-100 shadow-lg mb-4">
+            <div class="card card-compact bg-base-100 mb-4 rounded">
                 <div class="card-body">
                     <?php foreach($json['allergies'] as $allergy): ?>
                         <h3 class="card-title mt-0 text-lg font-normal">
@@ -28,7 +28,7 @@
         </div>
     <?php endif; ?>
 
-    <div class="divider my-8"></div>
+    <div class="divider opacity-60 my-8"></div>
     
     <div class="container">
         <h2 class="text-xl mb-3">Ingredients</h2>
@@ -36,13 +36,13 @@
 
         <div class="ingredients">
             <?php foreach($json['ingredients'] as $ingredient): ?>
-                <div class="card card-compact bg-base-100 shadow-lg mb-8 pb-2 relative">
+                <div class="card card-compact bg-base-100 mb-7 pb-2 relative rounded">
                     <div class="card-body">
                         <h3 class="card-title mt-0 text-lg font-normal">
                             <?php if ($ingredient['is_neutral']): ?>
                                 <div class="badge badge-ghost badge-xs absolute top-0 left-0 hidden"></div>
                             <?php else: ?>
-                                <div class="badge badge-error badge-xs absolute top-[-5px] left-[-5px]"></div>
+                                <div class="badge badge-error badge-xs absolute top-[-3px] left-[-3px]"></div>
                             <?php endif; ?>
                             <?php echo $ingredient['name']; ?>
                         </h3>
@@ -65,13 +65,13 @@
     </div>
 
     <?php if ($json['manufactured_facility_ingredients']): ?>
-        <div class="divider my-8"></div>
+        <div class="divider opacity-60 my-8"></div>
 
         <div class="container">
             <h2 class="text-xl mb-3">Shared Facility Ingredients</h2>
             <p class="text-sm mb-5">Ingredients that are manufactured in the same facility as the product.</p>
             <div class="ingredients-facility">
-                <div class="card card-compact bg-base-100 shadow-lg mb-4">
+                <div class="card card-compact bg-base-100 mb-4 rounded">
                     <div class="card-body">
                         <?php foreach($json['manufactured_facility_ingredients'] as $allergy): ?>
                             <h3 class="card-title mt-0 text-lg font-normal">
@@ -86,23 +86,37 @@
     <?php endif; ?>
 
     <?php if ($json['made_in'] || $json['bioengineered']): ?>
-        <div class="divider my-8"></div>
-        <div class="container pb-8">
-            <div class="stats stats-vertical lg:stats-horizontal shadow bg-base-300 w-full">
-                <div class="stat">
-                    <div class="stat-title">Made In</div>
-                    <div class="stat-value text-lg font-normal"><?php echo $json['made_in']; ?></div>
-                </div>
+        
+        <div class="divider opacity-60 my-8"></div>
 
-                <?php if ($json['bioengineered']): ?>
-                    <div class="stat">
-                        <div class="stat-title">Bioengineered</div>
-                        <div class="stat-value text-lg font-normal">Yes</div>
-                        <div class="stat-desc">1 or more ingredients</div>
+        <div class="container pb-10">
+            <h2 class="text-xl mb-3">Other Information</h2>
+            <div class="ingredients-facility">
+                <?php if ($json['made_in']): ?>
+                <div class="card card-compact bg-base-100 mb-4 rounded">
+                    <div class="card-body">
+                        <h3 class="card-title mt-0 text-lg font-normal">
+                            Made In: <?php echo $json['made_in']; ?>
+                        </h3>
                     </div>
+                </div>
+                <?php endif; ?>
+
+                <?php if ($json['bioengineered']): ?>   
+                <div class="card card-compact bg-base-100 mb-4 rounded">
+                    <div class="card-body">
+                        <h3 class="card-title mt-0 text-lg font-normal">
+                            Bioengineered: Yes
+                        </h3>
+                        <p class="text-xs">
+                            1 or more ingredients
+                        </p>
+                    </div>
+                </div>
                 <?php endif; ?>
             </div>
         </div>
+
     <?php endif; ?>
 
 
