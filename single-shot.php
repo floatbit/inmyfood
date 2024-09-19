@@ -42,7 +42,7 @@
                             <?php if ($ingredient['is_neutral']): ?>
                                 <div class="badge badge-ghost badge-xs absolute top-0 left-0 hidden"></div>
                             <?php else: ?>
-                                <div class="badge badge-error badge-xs absolute top-[-3px] left-[-3px]"></div>
+                                <div class="badge badge-error badge-xs"></div>
                             <?php endif; ?>
                             <?php echo $ingredient['name']; ?>
                         </h3>
