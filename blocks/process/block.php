@@ -91,8 +91,9 @@ if (isset($_POST['image'])) {
         "made_in": "",
         "manufactured_facility_ingredients": [],
         "allergies": ["soy"],
-        "bioengineered": 0
-      }. Avoid listing sub-ingredients. Use sub-ingredients to determine "reason," and "allergies". Provide nutritional risks and environmental impact. Set "is_neutral" to 0 if any nutritional risks are present. Leave "made_in" blank if not shown. Leave "manufactured_facility_ingredients" blank unless facility info is provided. Set "bioengineered" to 1 if any ingredient is bioengineered, otherwise 0. Return JSON in one line with no formatting.';
+        "bioengineered": 0,
+        "bioengineered_reason": "",
+      }. Avoid listing sub-ingredients. Use sub-ingredients to determine "reason," and "allergies". Provide nutritional risks and environmental impact. Set "is_neutral" to 0 if any nutritional risks are present. Leave "made_in" blank if not shown. Leave "manufactured_facility_ingredients" blank unless facility info is provided. Set "bioengineered" to 1 if any ingredient is bioengineered and provide a "bioengineered_reason" if possible, otherwise 0. Return JSON in one line with no formatting.';
   
       // Create the JSON payload
       $data = [
