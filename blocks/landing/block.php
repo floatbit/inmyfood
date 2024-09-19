@@ -36,7 +36,7 @@ $classes .= ' mt-10';
         <p class="text-center">
             <img src="<?php echo assets_url('/dist/images/photo.jpg'); ?>" class=" mx-auto" />
         </p>
-        <p class="text-xl mb-10 text-primary font-bold">
+        <p class="text-2xl mb-10 text-primary font-bold">
             Snap a photo of an ingredient list to uncover information about each ingredient.
         </p>
     </div>
