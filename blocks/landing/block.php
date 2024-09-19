@@ -25,7 +25,7 @@ if ( ! empty( $block['align'] ) ) {
     $classes .= ' align' . $block['align'];
 }
 
-$classes .= ' my-10';
+$classes .= ' my-5';
 ?>
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
@@ -34,7 +34,7 @@ $classes .= ' my-10';
             What's in my food? <br>What am I eating?
         </h3>
         <p class="text-center">
-            <img src="<?php echo assets_url('/dist/images/photo.png'); ?>" class="w-2/3 mx-auto" />
+            <img src="<?php echo assets_url('/dist/images/photo.png'); ?>" class="w-1/2 mx-auto" />
         </p>
         <p class="text-lg mb-10">
             Snap a photo of an ingredient list to uncover detailed information about each ingredient.
