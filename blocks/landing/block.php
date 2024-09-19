@@ -31,16 +31,24 @@ $classes .= ' my-5';
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="container text-center prose">
         <h3 class="text-3xl">
-            What's in my food? <br>What am I eating?
+            What's In My Food?
         </h3>
         <p class="text-center">
             <img src="<?php echo assets_url('/dist/images/photo.jpg'); ?>" class=" mx-auto" />
         </p>
-        <p class="text-lg mb-10">
+        <p class="text-lg mb-10 text-primary font-bold">
             Snap a photo of an ingredient list to uncover information about each ingredient.
         </p>
-        <p class="text-left">
-            <a class="btn btn-primary btn-lg w-full text-2xl" href="/camera">Try It Now</a>
-        </p>
     </div>
+
+    <p class="pb-[40px]">
+        <img src="<?php echo assets_url('/dist/images/food.png'); ?>" class="m-0" />
+    </p>
+
+    <div class="fixed bottom-[20px] left-0 w-full">
+        <div class="container">
+            <a class="btn btn-primary btn-lg w-full text-2xl rounded-none" href="/camera">Try It Now</a>
+        </div>
+    </div>
+
 </div>
