@@ -96,7 +96,7 @@ if (isset($_POST['image'])) {
   
       // Create the JSON payload
       $data = [
-          "model" => "o1-preview",
+          "model" => "gpt-4o-mini",
           "messages" => [
               [
                   "role" => "user",
