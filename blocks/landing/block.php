@@ -25,7 +25,7 @@ if ( ! empty( $block['align'] ) ) {
     $classes .= ' align' . $block['align'];
 }
 
-$classes .= ' my-5';
+$classes .= ' mt-10';
 ?>
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
@@ -36,7 +36,7 @@ $classes .= ' my-5';
         <p class="text-center">
             <img src="<?php echo assets_url('/dist/images/photo.jpg'); ?>" class=" mx-auto" />
         </p>
-        <p class="text-lg mb-10 text-primary font-bold">
+        <p class="text-xl mb-10 text-primary font-bold">
             Snap a photo of an ingredient list to uncover information about each ingredient.
         </p>
     </div>
