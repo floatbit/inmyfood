@@ -52,7 +52,7 @@ if ( ! empty( $block['align'] ) ) {
 		</form>
 	</div>
 
-	<div id="loading-container" class="hidden mt-3">
+	<div id="loading-container" class="hidden mt-3 text-center">
 		<span class="loading loading-ring loading-lg"></span>
 	</div>
 
