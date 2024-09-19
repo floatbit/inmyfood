@@ -42,7 +42,7 @@ export default class Camera {
             video.onloadedmetadata = () => {
                 const aspectRatio = video.videoWidth / video.videoHeight;
                 canvas.width = 480;
-                canvas.height = 480 / aspectRatio;
+                canvas.height = 640;
 
                 // Set zoom slider max based on capabilities
                 const videoTrack = currentStream.getVideoTracks()[0];
@@ -80,7 +80,24 @@ export default class Camera {
         // });
 
         captureButton.addEventListener('click', () => {
-            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            const videoAspectRatio = video.videoWidth / video.videoHeight;
+            const containerAspectRatio = canvas.width / canvas.height;
+
+            let sx, sy, sWidth, sHeight;
+
+            if (videoAspectRatio > containerAspectRatio) {
+                sHeight = video.videoHeight;
+                sWidth = video.videoHeight * containerAspectRatio;
+                sx = (video.videoWidth - sWidth) / 2;
+                sy = 0;
+            } else {
+                sWidth = video.videoWidth;
+                sHeight = video.videoWidth / containerAspectRatio;
+                sx = 0;
+                sy = (video.videoHeight - sHeight) / 2;
+            }
+
+            context.drawImage(video, sx, sy, sWidth, sHeight, 0, 0, canvas.width, canvas.height);
             const dataUrl = canvas.toDataURL('image/png');
             imageDataInput.value = dataUrl;
 

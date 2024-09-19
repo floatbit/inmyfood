@@ -77,26 +77,22 @@ if (isset($_POST['image'])) {
 
     // do api response
     // Updated prompt to incorporate all suggestions
-    $prompt = 'You are a registered dietician. Analyze this image and extract all ingredients. Return the results as JSON, starting with "{", using this structure: {
+    $prompt = 'You are a world renowned registered dietician. Analyze this image and extract all ingredients. Return the results as JSON, starting with "{", using this structure: {
         "ingredients": [
           {
             "name": "Soy Sauce",
             "description": "A common condiment made from fermented soybeans, water, and salt.",
             "reason": "High sodium content which can contribute to high blood pressure.",
             "is_neutral": 1,
-            "healthier_alternative": "Low-sodium soy sauce",
             "environmental_impact": "Low footprint",
             "nutritional_risks": ["sodium"]
           }
         ],
         "made_in": "",
         "manufactured_facility_ingredients": [],
-        "allergens": ["soy"],
         "allergies": ["soy"],
-        "bioengineered": 0,
-        "health_summary": ["neutral"],
-        "nutritional_info": ["saturated fat", "sodium", "sugar"]
-      }. Avoid listing sub-ingredients. Use sub-ingredients to determine "reason," "allergens," and "allergies". Provide healthier alternatives, nutritional risks, and environmental impact. Set "is_neutral" to 0 if any nutritional risks are present. Leave "made_in" blank if not shown. Leave "manufactured_facility_ingredients" blank unless facility info is provided. Set "bioengineered" to 1 if any ingredient is bioengineered, otherwise 0. Return JSON in one line with no formatting.';
+        "bioengineered": 0
+      }. Avoid listing sub-ingredients. Use sub-ingredients to determine "reason," and "allergies". Provide nutritional risks and environmental impact. Set "is_neutral" to 0 if any nutritional risks are present. Leave "made_in" blank if not shown. Leave "manufactured_facility_ingredients" blank unless facility info is provided. Set "bioengineered" to 1 if any ingredient is bioengineered, otherwise 0. Return JSON in one line with no formatting.';
   
       // Create the JSON payload
       $data = [
