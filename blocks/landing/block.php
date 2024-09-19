@@ -42,7 +42,7 @@ $classes .= ' my-5';
     </div>
 
     <p class="pb-[40px]">
-        <img src="<?php echo assets_url('/dist/images/food.png'); ?>" class="m-0" />
+        <img src="<?php echo assets_url('/dist/images/food.png'); ?>" class="m-0 w-full" />
     </p>
 
     <div class="fixed bottom-[20px] left-0 w-full">
