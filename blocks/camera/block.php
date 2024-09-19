@@ -34,10 +34,10 @@ if ( ! empty( $block['align'] ) ) {
 		<input type="range" id="zoom-slider" min="1" max="10" step="0.1" value="1">
 	</div>
 
-	<div class="mt-0">
+	<div class="mt-3">
         <div class="container">
-            <button id="capture-button">Take Photo</button>
-            <button id="switch-camera">Switch Camera</button>
+            <button class="btn btn-primary" id="capture-button">Take Photo</button>
+            <button class="btn btn-outline btn-ghost" id="switch-camera">Switch Camera</button>
         </div>
 	</div>
 
@@ -47,8 +47,13 @@ if ( ! empty( $block['align'] ) ) {
 			<input type="hidden" name="date" id="current-date">
 			<input type="hidden" name="time" id="current-time">
 			<input type="hidden" name="day" id="current-day">
-			<button id="submit-button" type="submit">Submit</button>
-			<button id="retake-button" type="button">Retake</button>
+			<button class="btn btn-accent" id="submit-button" type="submit">Submit</button>
+			<button class="btn btn-outline btn-ghost" id="retake-button" type="button">Retake</button>
 		</form>
 	</div>
+
+	<div id="loading-container" class="hidden mt-3">
+		<span class="loading loading-ring loading-lg"></span>
+	</div>
+
 </div>

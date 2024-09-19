@@ -128,6 +128,14 @@ export default class Camera {
 
         switchCameraButton.addEventListener('click', switchCamera);
 
+        submitButton.addEventListener('click', () => {
+            captureButton.style.display = 'none';
+            switchCameraButton.style.display = 'none';
+            retakeButton.style.display = 'none';
+            submitButton.style.display = 'none';
+            document.getElementById('loading-container').classList.remove('hidden');
+        });
+
         (async () => {
             await getDevices();
             const backCamera = devices.find(device => device.label.toLowerCase().includes('back')) || devices[0];

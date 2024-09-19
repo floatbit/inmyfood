@@ -24,17 +24,14 @@
     #capture-button, #submit-button, #retake-button, #switch-camera {
         margin: 10px 10px 10px 0;
         padding: 10px 20px;
-        font-size: 16px;
     }
     #capture-button {
-        @apply btn btn-primary;
+
     }
     #submit-button {
-        @apply btn btn-accent;
         display: none;
     }
     #retake-button {
-        @apply btn;
         display: none;
     }
     #zoom-slider {
