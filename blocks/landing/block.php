@@ -30,10 +30,13 @@ $classes .= ' my-10';
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="container text-center prose">
-        <h3 class="mb-6 text-3xl">
+        <h3 class="text-3xl">
             What's in my food? <br>What am I eating?
         </h3>
-        <p class="text-lg mb-12">
+        <p class="text-center">
+            <img src="<?php echo assets_url('/dist/images/photo.png'); ?>" class="w-2/3 mx-auto" />
+        </p>
+        <p class="text-lg mb-10">
             Snap a photo of an ingredient list to uncover detailed information about each ingredient.
         </p>
         <p class="text-left">
