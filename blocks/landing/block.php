@@ -37,7 +37,7 @@ $classes .= ' my-5';
             <img src="<?php echo assets_url('/dist/images/photo.jpg'); ?>" class=" mx-auto" />
         </p>
         <p class="text-lg mb-10">
-            Snap a photo of an ingredient list to uncover detailed information about each ingredient.
+            Snap a photo of an ingredient list to uncover information about each ingredient.
         </p>
         <p class="text-left">
             <a class="btn btn-primary btn-lg w-full text-2xl" href="/camera">Try It Now</a>
