@@ -41,9 +41,9 @@ $classes .= ' mt-10';
         </p>
     </div>
 
-    <p class="pb-[40px]">
-        <img src="<?php echo assets_url('/dist/images/food.png'); ?>" class="m-0 w-full" />
-    </p>
+    <div class="container pb-[100px]">
+        <img src="<?php echo assets_url('/dist/images/food.png'); ?>" class="m-0 w-full rounded border-2 border-black-100" />
+    </div>
 
     <div class="fixed bottom-[20px] left-0 w-full">
         <div class="container">
