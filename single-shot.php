@@ -102,14 +102,14 @@
                 </div>
                 <?php endif; ?>
 
-                <?php if ($json['bioengineered']): ?>   
+                <?php if ($json['bioengineered'] && $json['bioengineered_reason']): ?>   
                 <div class="card card-compact bg-base-100 mb-4 rounded">
                     <div class="card-body">
                         <h3 class="card-title mt-0 text-lg font-normal">
                             Bioengineered: Yes
                         </h3>
                         <p class="text-xs">
-                            1 or more ingredients
+                            <?php print $json['bioengineered_reason']; ?>
                         </p>
                     </div>
                 </div>
