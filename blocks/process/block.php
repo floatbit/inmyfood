@@ -19,9 +19,14 @@ if (isset($_POST['image'])) {
 
     // Save the image in the media library
     $upload_dir = wp_upload_dir();
-    $image_name = $unique_id . '.png';
+    $image_name = $unique_id . '.jpg';
     $image_path = $upload_dir['path'] . '/' . $image_name;
-    file_put_contents($image_path, $imageContent);
+
+    // Create an image resource from the decoded content
+    $image = imagecreatefromstring($imageContent);
+
+    // Save the image as a JPG
+    imagejpeg($image, $image_path, 80); // 0-100 quality for JPG, 90 is a good balance
 
     // Resize the image
     function resizeImage($file, $maxWidth, $maxHeight) {
@@ -39,7 +44,7 @@ if (isset($_POST['image'])) {
             $height = $maxHeight;
         }
 
-        $src = imagecreatefrompng($file); // Assuming PNG as the format
+        $src = imagecreatefromjpeg($file); // Assuming JPG as the format
         $dst = imagecreatetruecolor($width, $height);
         imagecopyresampled($dst, $src, 0, 0, 0, 0, $width, $height, $origWidth, $origHeight);
 
@@ -50,14 +55,14 @@ if (isset($_POST['image'])) {
     $resizedImage = resizeImage($image_path, 800, 600); // Resize to fit within 800x600
 
     // Save the resized image to a new file
-    $resizedImageName = $unique_id . '_resized.png';
+    $resizedImageName = $unique_id . '_resized.jpg';
     $resizedImagePath = $upload_dir['path'] . '/' . $resizedImageName;
-    imagepng($resizedImage, $resizedImagePath, 8); // 0-9 quality for PNG, 0 is no compression
+    imagejpeg($resizedImage, $resizedImagePath, 90); // 0-100 quality for JPG, 90 is a good balance
 
     // Add the resized image to the media library
     $attachment = [
         'guid' => $upload_dir['url'] . '/' . $resizedImageName,
-        'post_mime_type' => 'image/png',
+        'post_mime_type' => 'image/jpeg',
         'post_title' => sanitize_file_name($resizedImageName),
         'post_content' => '',
         'post_status' => 'inherit'
@@ -94,7 +99,7 @@ if (isset($_POST['image'])) {
         "bioengineered": 0,
         "bioengineered_reason": "",
       }. Avoid listing sub-ingredients. Use sub-ingredients to determine "reason," and "allergies". Provide nutritional risks and environmental impact. Set "is_neutral" to 0 if any nutritional risks are present. Leave "made_in" blank if not shown. Leave "manufactured_facility_ingredients" blank unless facility info is provided. Set "bioengineered" to 1 if any ingredient is bioengineered and provide a "bioengineered_reason" if possible, otherwise 0. Return JSON in one line with no formatting.';
-  
+
       // Create the JSON payload
       $data = [
           "model" => "gpt-4o",
@@ -117,14 +122,14 @@ if (isset($_POST['image'])) {
           ],
           "max_tokens" => 2000
       ];
-  
+
       // API endpoint and API key
       $url = 'https://api.openai.com/v1/chat/completions';
       $apiKey = CHATGPT_API_KEY;
-  
+
       // Initialize cURL
       $ch = curl_init($url);
-  
+
       // Set cURL options
       curl_setopt($ch, CURLOPT_HTTPHEADER, [
           'Content-Type: application/json',
@@ -133,7 +138,7 @@ if (isset($_POST['image'])) {
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       curl_setopt($ch, CURLOPT_POST, true);
       curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-  
+
       // Execute cURL request and get the response
       $response = curl_exec($ch);
 
